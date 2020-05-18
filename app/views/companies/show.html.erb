@@ -22,3 +22,14 @@
 
 <%= link_to 'Edit', edit_company_path(@company) %> |
 <%= link_to 'Back', companies_path %>
+
+<h3>Games</h3>
+<ul>
+  <% @company.games.each do | game | %>
+  <li>
+    <strong><%= game.name %></strong>
+    <p><%= game.description %></p>
+    <%= link_to 'Show game', game_path(game) %> |
+  </li>
+  <% end %>
+</ul>
