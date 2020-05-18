@@ -17,8 +17,8 @@
 
 <p>
   <strong>Game:</strong>
-  <%= @critic.game_id %>
+  <%= @critic.game.name %>
 </p>
-
+<%= link_to 'See Game', game_path(@critic.game) %> |
 <%= link_to 'Edit', edit_critic_path(@critic) %> |
 <%= link_to 'Back', critics_path %>

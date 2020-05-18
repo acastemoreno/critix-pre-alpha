@@ -28,3 +28,14 @@
 <%= link_to 'See Company', company_path(@game.company) %> |
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>
+
+<h3>Critics</h3>
+<ul>
+  <% @game.critics.each do | critic | %>
+  <li>
+    <strong><%= critic.title %></strong>
+    <p><%= critic.body %></p>
+    <%= link_to 'Show critic', critic_path(critic) %> |
+  </li>
+  <% end %>
+</ul>
