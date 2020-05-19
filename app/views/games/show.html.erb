@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @game.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @game.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @game.price %>
+</p>
+
+<p>
+  <strong>Release date:</strong>
+  <%= @game.release_date %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @game.company.name %>
+  
+</p>
+<%= link_to 'See Company', company_path(@game.company) %> |
+<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Back', games_path %>
+
+<h3>Critics</h3>
+<ul>
+  <% @game.critics.each do | critic | %>
+  <li>
+    <strong><%= critic.title %></strong>
+    <p><%= critic.body %></p>
+    <%= link_to 'Show critic', critic_path(critic) %> |
+  </li>
+  <% end %>
+</ul>
